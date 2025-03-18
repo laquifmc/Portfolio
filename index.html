@@ -212,5 +212,29 @@
     </main>
 
     <!-- Scripts se mantienen igual -->
+<script>
+    // Función Modal Actualizada
+    function openModal(videoId, isShort = false) {
+        const modal = document.getElementById('videoModal');
+        const frame = document.getElementById('videoFrame');
+        
+        // Configuración especial para Shorts
+        const url = isShort 
+            ? `https://www.youtube.com/embed/${https://www.youtube.com/watch?v=TopAl8ZcQHU&t=1s}?autoplay=1&playsinline=1` 
+            : `https://www.youtube.com/embed/${https://www.youtube.com/shorts/jDxRhx7E1HM}?autoplay=1`;
+
+        modal.style.display = "block";
+        frame.src = url;
+    }
+
+    function closeModal() {
+        document.getElementById('videoModal').style.display = "none";
+        document.getElementById('videoFrame').src = '';
+    }
+
+    // Actualiza los botones del short:
+    <button onclick="openModal('jDxRhx7E1HM', true)" ...>Ver Short</button>
+</script>
+    
 </body>
 </html>
