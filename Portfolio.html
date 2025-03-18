@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federico Mendoza Correa | Productor Audiovisual</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-cyan: #0ff;
+            --neon-magenta: #f0f;
+            --bg-dark: #000;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--neon-cyan);
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .crt::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        .glitch-text {
+            text-shadow: 0.05em 0 0 var(--neon-magenta),
+                         -0.025em -0.05em 0 var(--neon-cyan);
+            animation: glitch 500ms infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 var(--neon-magenta); }
+            50% { text-shadow: -0.05em 0 0 var(--neon-cyan); }
+            100% { text-shadow: 0.05em 0 0 var(--neon-magenta); }
+        }
+
+        .profile-header {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin: 2rem 0;
+            padding: 0 2rem;
+        }
+
+        .profile-img {
+            border: 3px solid var(--neon-magenta);
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            box-shadow: 0 0 25px var(--neon-cyan);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .project-card {
+            border: 3px solid var(--neon-cyan);
+            transition: all 0.3s;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: center;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover img {
+            filter: grayscale(0%) brightness(110%);
+            transform: scale(1.03);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+            border-top: 3px solid var(--neon-magenta);
+        }
+
+        /* Resto de estilos se mantienen igual */
+    </style>
+</head>
+<body class="crt">
+    <main>
+        <!-- Header Perfil -->
+        <div class="profile-header">
+            <img src="https://i.ibb.co/hSZHk1d/profile.jpg" alt="Perfil Federico Mendoza" class="profile-img">
+            <div>
+                <h1 class="glitch-text" style="font-family: 'Press Start 2P', cursive; margin: 0; font-size: 1.8rem;">
+                    FEDERICO MENDOZA CORREA
+                </h1>
+                <div style="color: var(--neon-magenta); margin-top: 1rem;">
+                    <span style="border-right: 2px solid; padding-right: 1rem;">🎬 Productor Audiovisual para RRSS</span>
+                    <span style="padding-left: 1rem;">📱 Iphone 15 pro</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio -->
+        <section class="portfolio-grid">
+            <!-- Documental -->
+            <div class="project-card">
+                <img src="https://i.ibb.co/YTc8TJyC/miniaturayoutube.png" alt="Documental Día Mundial del Riñón">
+                <div class="project-info">
+                    <h3 style="margin: 0 0 1rem;">DOCUMENTAL "RENÁLIDA"</h3>
+                    <p style="color: #888; margin: 0;">Selección Oficial ISN 2025</p>
+                    <button onclick="openModal('TopAl8ZcQHU')" 
+                            style="background: var(--neon-magenta); 
+                                   border: none;
+                                   padding: 0.8rem 1.5rem;
+                                   margin-top: 1rem;
+                                   cursor: pointer;
+                                   font-family: 'Press Start 2P';
+                                   font-size: 0.8rem;">
+                        VER TRAILER
+                    </button>
+                </div>
+            </div>
+
+            <!-- Short -->
+            <div class="project-card">
+                <img src="https://i.ibb.co/6cbC7Fqw/portadayoutube.png" alt="Short Ejemplo">
+                <div class="project-info">
+                    <h3 style="margin: 0 0 1rem;">SHORT VIRAL</h3>
+                    <p style="color: #888; margin: 0;">Alto Engagement</p>
+                    <button onclick="openModal('jDxRhx7E1HM')" 
+                            style="background: var(--neon-cyan); 
+                                   border: none;
+                                   padding: 0.8rem 1.5rem;
+                                   margin-top: 1rem;
+                                   cursor: pointer;
+                                   font-family: 'Press Start 2P';
+                                   font-size: 0.8rem;
+                                   color: #000;">
+                        VER EJEMPLO
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto (Actualizada) -->
+        <section class="bio-section" id="contacto" style="margin: 4rem 2rem; padding: 2rem; background: #000;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <!-- Email -->
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; color: var(--neon-magenta);">✉️</div>
+                    <a href="mailto:federicomendozac@gmail.com" 
+                       style="color: var(--neon-cyan); 
+                              text-decoration: none;
+                              border: 2px solid;
+                              padding: 0.5rem;
+                              display: block;
+                              transition: all 0.3s;"
+                       onmouseover="this.style.background='var(--neon-magenta)'">
+                       CONTACTO DIRECTO
+                    </a>
+                </div>
+
+                <!-- Instagram -->
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; color: var(--neon-magenta);">📸</div>
+                    <a href="https://instagram.com/federicomcorrea" 
+                       target="_blank"
+                       style="color: var(--neon-cyan); 
+                              text-decoration: none;
+                              border: 2px solid;
+                              padding: 0.5rem;
+                              display: block;
+                              transition: all 0.3s;"
+                       onmouseover="this.style.background='var(--neon-magenta)'">
+                       IG
+                    </a>
+                </div>
+
+                <!-- WhatsApp -->
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; color: var(--neon-magenta);">📱</div>
+                    <button onclick="navigator.clipboard.writeText('+542233044429')"
+                            style="background: none;
+                                   border: 2px solid var(--neon-cyan);
+                                   color: var(--neon-cyan);
+                                   padding: 0.5rem;
+                                   width: 100%;
+                                   cursor: pointer;
+                                   transition: all 0.3s;"
+                            onmouseover="this.style.background='var(--neon-magenta)'">
+                        2233044429
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts se mantienen igual -->
+</body>
+</html>
